@@ -1,0 +1,14 @@
+extend ../layouts/common
+
+block content
+
+  h3.text-center.mt-4 Edit title book
+  .container
+    a.btn.btn-outline-secondary(href='/books') Back
+    form.form-group.mt-3(action='/books/edit', method='post', enctype='multipart/form-data')
+      input(name='id', type='hidden', value=id)
+      label(for='title') New title:
+      input.form-control(id='title', name='title', type='text')
+      label(for='cover') Cover:
+      input.form-control-file(id='cover', name='cover', type='file')
+      button.btn.btn-success.mt-4 Update

@@ -1,0 +1,9 @@
+.table .thead-dark td {
+  padding: 0px;
+  line-height: 64px;
+}
+
+.table .thead-dark tr td:last-child {
+  padding-top: 18px;
+}
+

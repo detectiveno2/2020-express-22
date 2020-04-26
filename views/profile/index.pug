@@ -1,0 +1,21 @@
+extend ../layouts/common
+
+block content
+
+  h2.text-center.mt-4= user.name
+  .container.d-flex.align-items-center.justify-content-between
+    img.border.border-secondary.rounded-circle.mr-4(src=user.avatarUrl, alt='avatar', width='256')
+    form.flex-grow-1.ml-4
+      input(type='hidden', name='id', value=user.id)
+      .form-group
+        label(for='name') Name:
+        input.form-control(id='name', name='name', type='text', value=user.name, readonly)
+      .form-group
+        label(for='email') Email:
+        input.form-control(id='email', name='email', type='text', value=user.email, readonly)
+      .form-group
+        label(for='phone') Phone:
+        input.form-control(id='phone', name='phone', type='text', value=user.phone, readonly)
+      a.btn.btn-success.mt-3(href='/profile/update/' + user.id) Update
+        
+      

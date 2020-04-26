@@ -1,0 +1,15 @@
+extend ../layouts/common
+
+block content
+
+  h3.text-center.mt-4 Create book
+  .container
+    a.btn.btn-outline-secondary(href='/books') Back
+    form.form-group.mt-4(action='', method='post', enctype='multipart/form-data')
+      label(for='title') Title:
+      input.form-control(id='title', name='title', type='text')
+      label(for='description') Description:
+      input.form-control(id='description', name='description', type='text')
+      label(for='cover') Cover:
+      input.form-control-file(id='cover', name='cover', type='file')
+      button.btn.btn-success.mt-4 Create

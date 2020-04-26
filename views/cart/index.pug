@@ -1,0 +1,26 @@
+extend ../layouts/common
+
+block content
+
+  h2.text-center.mt-4 Your cart
+    .container.mt-4
+      table.table
+        thead.thead-dark
+          tr
+            th.text-center Cover
+            th.text-center Title
+            th.text-center Description
+            th.text-center Action
+          each book in cart
+            tr
+              td.text-center
+                img(src=book.coverUrl, width='64')
+              td.text-center= book.title
+              td.text-center= book.description
+              td.text-center
+                .btn-group.btn-group-sm
+                  a.btn.btn-outline-danger(href='/cart/remove/' + book.id) Remove
+                  
+      a.btn.btn-success(href='/cart/hire') Hire
+                  
+        
