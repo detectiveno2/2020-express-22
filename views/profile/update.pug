@@ -1,0 +1,23 @@
+extend ../layouts/common
+
+block content
+
+  h2.text-center.mt-4= user.name
+  .container
+    form(action='', method='post', enctype='multipart/form-data')
+      .form-group
+        input(type='hidden', name='id', value=user.id)
+      .form-group
+        label(for='name') Name:
+        input.form-control(id='name', name='name', type='text', value=user.name)
+      .form-group
+        label(for='email') Email:
+        input.form-control(id='email', name='email', type='text', value=user.email)
+      .form-group
+        label(for='phone') Phone:
+        input.form-control(id='phone', name='phone', type='text', value=user.phone)
+      .form-group
+        label(for='avatar') Avatar:
+        input.form-control-file(id='avatar', name='avatar', type='file')
+      button.btn.btn-success Done
+        
